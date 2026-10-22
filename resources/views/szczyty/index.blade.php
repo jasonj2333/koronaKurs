@@ -10,7 +10,11 @@
     <h1>Szczyty Korony Gór Polskich</h1>
     @forelse ($szczyty as $szczyt)
         <article>
-            <h2>{{ $szczyt['nazwa'] }}</h2>
+            <h2>
+                <a href="{{ route('szczyty.show', $szczyt['slug']) }}">
+                    {{ $szczyt['nazwa'] }}
+                </a>
+            </h2>
             <p>Wysokość: {{ $szczyt['wysokosc'] }} m</p>
             <p>Lokalizacja: {{ $szczyt['pasmo'] }}</p>
         </article>
